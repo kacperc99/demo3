@@ -16,6 +16,9 @@ public class resultbuilder {
     public static apiresult getResult( BigDecimal result ) {
         return apiresult.withResult(result.toPlainString());
     }
+    public static apiresult getResult( int result ) {
+        return apiresult.withResult(String.valueOf(result));
+    }
 
     public static apiresult getResultFromError(String errorMessage) {
         return apiresult.withError(errorMessage);

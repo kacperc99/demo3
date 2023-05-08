@@ -40,5 +40,21 @@ public class calc {
         }
         return getResult(a.divide(b, RoundingMode.HALF_EVEN));
     }
+    @GetMapping("/fibbonacci")
+    public apiresult divide(@RequestParam Integer a) {
+        if (a.equals(BigDecimal.ZERO)) {
+            return getResultFromError("can't do fibbonacci with 0");
+        }
+        int n1 = 0;
+        int n2 = 1;
+        int n3 = 0;
+        for (int i = 2; i < a; ++i)
+        {
+            n3 = n1+n2;
+            n1=n2;
+            n2=n3;
+        }
+        return getResult(n3);
+    }
 
 }
